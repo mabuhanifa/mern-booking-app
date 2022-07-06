@@ -2,6 +2,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import connectDB from "./config/mongodb.js";
+import auth from "./routes/auth.js";
+
 const app = express();
 
 dotenv.config();
@@ -13,6 +15,7 @@ try {
   console.error(err);
 }
 
+app.use("/auth", auth);
 app.get("/", (req, res) => {
   res.send("hello from node api!");
 });
