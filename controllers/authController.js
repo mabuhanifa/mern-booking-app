@@ -3,9 +3,9 @@ import User from "../models/User.js";
 export const register = async (req, res, next) => {
   try {
     const newUser = new User({
-      username: req.user.username,
-      email: req.user.email,
-      password: req.user.password,
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
     });
 
     await newUser.save();
