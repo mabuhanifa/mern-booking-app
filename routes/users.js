@@ -29,18 +29,18 @@ router.get("/checkadmin/:id", verifyAdmin, (req, res, next) => {
 
 //Update a user
 
-router.put("/:id", updateUser);
+router.put("/:id", verifyUser, updateUser);
 
 // Delete a user
 
-router.delete("/:id", deleteUser);
+router.delete("/:id", verifyUser, deleteUser);
 
 // Get a user by id
 
-router.get("/:id", getUser);
+router.get("/:id", verifyUser, getUser);
 
 // Get all user
 
-router.get("/", getUsers);
+router.get("/", verifyAdmin, getUsers);
 
 export default router;
