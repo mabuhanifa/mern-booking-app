@@ -58,7 +58,9 @@ router.get("/:id", async (req, res) => {
 
 // Get all Route
 
-router.get("/", async (req, res) => {
+router.get("/", async (req, res, next) => {
+  console.log("hi i am a middleware");
+  next();
   try {
     const hotels = await Hotel.find();
     res.status(200).json(hotels);
