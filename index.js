@@ -18,6 +18,8 @@ try {
   console.error(err);
 }
 
+app.use(express.json());
+
 app.use("/api/auth", authRoutes);
 app.use("/api/hotels", hotelsRoutes);
 app.use("/api/rooms", roomsRoutes);
