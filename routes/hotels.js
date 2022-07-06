@@ -7,6 +7,7 @@ import {
     updateHotel
 } from "../controllers/hotelController.js";
 import { verifyAdmin } from "../utils/verifyToken.js";
+
 const router = express.Router();
 
 /*
