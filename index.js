@@ -2,7 +2,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import connectDB from "./config/mongodb.js";
-import auth from "./routes/auth.js";
+import authRoutes from "./routes/auth.js";
+import hotelsRoutes from "./routes/hotels.js";
+import roomsRoutes from "./routes/rooms.js";
+import usersRoutes from "./routes/users.js";
 
 const app = express();
 
@@ -15,7 +18,11 @@ try {
   console.error(err);
 }
 
-app.use("/auth", auth);
+app.use("/api/auth", authRoutes);
+app.use("/api/hotels", hotelsRoutes);
+app.use("/api/rooms", roomsRoutes);
+app.use("/api/users", usersRoutes);
+
 app.get("/", (req, res) => {
   res.send("hello from node api!");
 });
