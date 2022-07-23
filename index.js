@@ -11,7 +11,15 @@ import usersRoutes from "./routes/users.js";
 const app = express();
 
 dotenv.config();
-app.use(cors());
+
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  })
+);
+
+app.use(cookieParser());
 
 try {
   connectDB();
