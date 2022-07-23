@@ -4,7 +4,8 @@ import {
     deleteRoom,
     getRoom,
     getRooms,
-    updateRoom
+    updateRoom,
+    updateRoomAvailability
 } from "../controllers/roomController.js";
 import { verifyAdmin } from "../utils/verifyToken.js";
 
